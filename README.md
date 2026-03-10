@@ -1,196 +1,129 @@
-🌌 Gesture Controlled Particle System
+<div align="center">
+  
+# 🌌 Gesture Controlled Particle System
+
+**An interactive WebGL particle simulation controlled by real-time hand gestures.**
+
+[![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)](#)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](#)
+[![WebGL](https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white)](#)
+[![MediaPipe](https://img.shields.io/badge/MediaPipe-00B2A9?style=for-the-badge&logo=google&logoColor=white)](#)
+
+</div>
+
+> **Move your hand to rotate particle structures, pinch to expand particles, and make a fist to switch between dynamic 3D shapes.** This project combines computer vision and GPU-accelerated graphics to create a responsive visual experience directly in the browser.
+
+---
+
+## 🎥 Demo
 
 
+🌐 **[Try the Live Demo Here](https://amber-20.github.io/Gesture-Controlled-Particle-System/)**
 
+---
 
+## ✨ Features
 
+* **Real-time hand gesture interaction** via webcam detection
+* **10,000+ GPU-accelerated particles** rendering smoothly
+* **Dynamic 3D shape morphing** between multiple geometries
+* **Smooth particle interpolation** for fluid transitions
+* **Procedural particle noise motion** and animated color spectrums (HSL)
+* **Responsive full-screen visualization** adaptable to any display
 
+---
 
+## 🖐️ Gesture Controls
 
-An interactive WebGL particle simulation that can be controlled using real-time hand gestures through your webcam.
+| Gesture | Action |
+| :--- | :--- |
+| ✋ **Pinch** (thumb + index) | Expand or contract the particle structure |
+| ✊ **Closed Fist** | Switch between available 3D shapes |
+| 🖐️ **Move Hand** | Rotate the entire particle system |
 
-Move your hand to rotate particle structures, pinch to expand particles, and make a fist to switch between dynamic 3D shapes.
+---
 
-The project combines computer vision and GPU-accelerated graphics to create a responsive visual experience directly in the browser.
+## 🌠 Available Particle Shapes
 
-Built using:
+The particle cloud dynamically morphs into multiple procedurally generated formations:
+* Sphere
+* Cosmic Flower
+* Heart
+* DNA Helix
+* Torus
+* Saturn Ring System
 
-Three.js
+---
 
-MediaPipe Hands
+## 🧠 How It Works
 
-WebGL
+### 3D Rendering
+Particles are rendered using Three.js with `BufferGeometry`. This allows thousands of individual particles to be processed efficiently on the GPU rather than the CPU, maintaining high framerates.
 
-JavaScript
+### Hand Tracking
 
-HTML / CSS
+Hand gestures are detected using **MediaPipe Hands**, which maps and tracks 21 distinct hand landmarks from your live webcam feed. These landmarks dynamically update the rotation, scale, and shape-switching logic of the system.
 
-🎥 Demo
+### Particle Motion
+Each individual particle includes targeted interpolation, random noise offsets, and continuous color cycling. When no hand is detected by the camera, the system defaults to a gentle "breathing" animation.
 
-(Add a screen recording GIF here later)
+---
 
-demo.gif
+## ⚡ Installation
 
-Example once added:
-
-![Demo](demo.gif)
-✨ Features
-
-Real-time hand gesture interaction
-
-10,000+ GPU-accelerated particles
-
-Dynamic 3D shape morphing
-
-Smooth particle interpolation
-
-Procedural particle noise motion
-
-Animated color spectrum (HSL)
-
-Webcam gesture detection
-
-Responsive full-screen visualization
-
-🖐 Gesture Controls
-Gesture	Action
-✋ Pinch (thumb + index finger)	Expand / contract particle structure
-✊ Closed fist	Switch between shapes
-Move hand	Rotate particle system
-🌠 Available Particle Shapes
-
-The particle cloud dynamically morphs into multiple formations:
-
-Sphere
-
-Cosmic Flower
-
-Heart
-
-DNA Helix
-
-Torus
-
-Saturn Ring System
-
-Each shape is procedurally generated and animated in real time.
-
-🧠 How It Works
-3D Rendering
-
-Particles are rendered using Three.js with BufferGeometry, allowing thousands of particles to be processed efficiently on the GPU.
-
-Hand Tracking
-
-Hand gestures are detected using MediaPipe Hands, which tracks 21 hand landmarks from the webcam feed.
-
-These landmarks are used to control:
-
-Particle rotation
-
-Particle scaling
-
-Shape switching
-
-Particle Motion
-
-Each particle includes:
-
-Target interpolation
-
-Random noise offsets
-
-Color cycling
-
-Breathing animation when no hand is detected
-
-⚡ Installation
-
-Clone the repository:
-
-git clone https://github.com/Amber-20/Gesture-Controlled-Particle-System.git
-
-Navigate into the folder:
+Clone the repository to your local machine:
+```bash
+git clone [https://github.com/Amber-20/Gesture-Controlled-Particle-System.git](https://github.com/Amber-20/Gesture-Controlled-Particle-System.git)
 
 cd Gesture-Controlled-Particle-System
 
-Run a local server:
-
-Example using Python:
-
+# Example using Python
 python -m http.server
 
-Open the project in your browser:
-
 http://localhost:8000
+```
+---
 
-⚠️ Webcam access requires localhost or HTTPS.
-
-🌐 Live Demo
-
-Once GitHub Pages is enabled, the project can run directly in the browser.
-
-https://amber-20.github.io/Gesture-Controlled-Particle-System/
-📂 Project Structure
+## 📂 Project Structure
 Gesture-Controlled-Particle-System
-│
-├── index.html
-├── README.md
-├── LICENSE
-└── demo.gif (optional)
+```│
+├── index.html       # Main application logic, Three.js, and MediaPipe implementation
 
-All main logic currently runs inside index.html for simplicity.
+├── README.md        # Project documentation
 
-🖥 Requirements
+├── LICENSE          # MIT License
+```
+---
 
-A modern browser with WebGL support:
+## 🖥️ Requirements & Performance
+Supported Browsers: Google Chrome, Microsoft Edge, Firefox, Safari (Must support WebGL).
 
-Google Chrome
+Hardware: Webcam access must be enabled.
 
-Microsoft Edge
+Optimization: Handles 10,000+ particles smoothly on most modern devices through Three.js BufferGeometry, GPU-accelerated rendering, and efficient animation loops.
 
-Firefox
+---
 
-Safari
+## 🔮 Future Improvements
+[ ] Multi-hand gesture support
 
-Webcam access must be enabled.
+[ ] Additional particle shapes
 
-🚀 Performance
+[ ] Audio-reactive particles
 
-The particle system is optimized for performance using:
+[ ] VR / AR interaction capabilities
 
-Three.js BufferGeometry
+[ ] Mobile gesture optimization
 
-GPU accelerated rendering
+[ ] Particle trails and physics
 
-Efficient animation loops
+[ ] Shader-based particle effects
 
-The system handles 10,000+ particles smoothly on most modern devices.
+---
 
-🔮 Future Improvements
+## 📜 License & Author
+Author: Amber
 
-Possible upgrades:
-
-Multi-hand gesture support
-
-Additional particle shapes
-
-Audio-reactive particles
-
-VR / AR interaction
-
-Mobile gesture optimization
-
-Particle trails and physics
-
-Shader-based particle effects
-
-📜 License
+An interactive project exploring creative coding, computer vision, and real-time WebGL particle systems.
 
 This project is licensed under the MIT License.
-
-👨‍💻 Author
-
-Amber
-
-Interactive project exploring creative coding, computer vision, and real-time WebGL particle systems.

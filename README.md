@@ -1,8 +1,17 @@
-🌌 Neural Dust v3
+🌌 Gesture Controlled Particle System
 
-Neural Dust v3 is an interactive WebGL particle system that uses real-time hand tracking to manipulate dynamic 3D particle formations. Using your webcam, you can control particle behavior, rotate the system, expand structures, and switch between complex shapes with simple hand gestures.
 
-The project combines 3D graphics with AI-powered hand tracking to create a responsive visual experience directly in the browser.
+
+
+
+
+
+
+An interactive WebGL particle simulation that can be controlled using real-time hand gestures through your webcam.
+
+Move your hand to rotate particle structures, pinch to expand particles, and make a fist to switch between dynamic 3D shapes.
+
+The project combines computer vision and GPU-accelerated graphics to create a responsive visual experience directly in the browser.
 
 Built using:
 
@@ -16,18 +25,41 @@ JavaScript
 
 HTML / CSS
 
+🎥 Demo
+
+(Add a screen recording GIF here later)
+
+demo.gif
+
+Example once added:
+
+![Demo](demo.gif)
 ✨ Features
+
+Real-time hand gesture interaction
+
+10,000+ GPU-accelerated particles
+
+Dynamic 3D shape morphing
+
+Smooth particle interpolation
+
+Procedural particle noise motion
+
+Animated color spectrum (HSL)
+
+Webcam gesture detection
+
+Responsive full-screen visualization
+
 🖐 Gesture Controls
-
-The particle system reacts to your hand movements in real time.
-
 Gesture	Action
-✋ Pinch (thumb + index finger)	Expand or contract particle formations
-✊ Closed fist	Switch between particle shapes
-Move hand	Rotate the particle system
-🌠 Particle Shapes
+✋ Pinch (thumb + index finger)	Expand / contract particle structure
+✊ Closed fist	Switch between shapes
+Move hand	Rotate particle system
+🌠 Available Particle Shapes
 
-Neural Dust dynamically morphs between several 3D structures:
+The particle cloud dynamically morphs into multiple formations:
 
 Sphere
 
@@ -41,84 +73,81 @@ Torus
 
 Saturn Ring System
 
-Each structure contains 10,000 particles rendered with additive blending and animated noise for organic motion.
+Each shape is procedurally generated and animated in real time.
 
 🧠 How It Works
-3D Particle Engine
+3D Rendering
 
-The system uses Three.js to render a particle cloud using BufferGeometry.
-
-Particles smoothly interpolate between target positions to morph between shapes.
+Particles are rendered using Three.js with BufferGeometry, allowing thousands of particles to be processed efficiently on the GPU.
 
 Hand Tracking
 
-Hand gestures are detected using MediaPipe Hands, which tracks 21 landmarks per hand from the webcam feed.
+Hand gestures are detected using MediaPipe Hands, which tracks 21 hand landmarks from the webcam feed.
 
-These landmarks control:
+These landmarks are used to control:
 
-Rotation
+Particle rotation
 
-Scaling
+Particle scaling
 
 Shape switching
 
-Motion Effects
+Particle Motion
 
-Particles include:
+Each particle includes:
 
-Per-particle random offsets
+Target interpolation
 
-Dynamic color cycling (HSL spectrum)
+Random noise offsets
 
-Noise-based motion
+Color cycling
 
-Breathing effects when no hand is detected
+Breathing animation when no hand is detected
 
-📷 Interface
-
-The application includes:
-
-Fullscreen particle visualization
-
-Live webcam preview
-
-Gesture instructions
-
-Real-time system status
-
-Current shape indicator
-
-🚀 Installation
+⚡ Installation
 
 Clone the repository:
 
-git clone https://github.com/amber-20/Particle-Despersion.git
+git clone https://github.com/Amber-20/Gesture-Controlled-Particle-System.git
 
-Particle-Despersion
+Navigate into the folder:
 
-Run using any local server:
+cd Gesture-Controlled-Particle-System
 
-Then open:
+Run a local server:
+
+Example using Python:
+
+python -m http.server
+
+Open the project in your browser:
 
 http://localhost:8000
 
-⚠️ Webcam access requires running the project through localhost or HTTPS.
+⚠️ Webcam access requires localhost or HTTPS.
 
+🌐 Live Demo
+
+Once GitHub Pages is enabled, the project can run directly in the browser.
+
+https://amber-20.github.io/Gesture-Controlled-Particle-System/
 📂 Project Structure
-neural-dust-v3
+Gesture-Controlled-Particle-System
 │
-├── index.html        # Main application
-├── README.md         # Project documentation
+├── index.html
+├── README.md
+├── LICENSE
+└── demo.gif (optional)
 
-All logic is currently contained in a single HTML file for simplicity.
+All main logic currently runs inside index.html for simplicity.
 
 🖥 Requirements
 
-Modern browser with WebGL support:
+A modern browser with WebGL support:
 
-Chrome
+Google Chrome
 
-Edge
+Microsoft Edge
 
 Firefox
 
@@ -126,62 +155,42 @@ Safari
 
 Webcam access must be enabled.
 
-⚙️ Performance
+🚀 Performance
 
-Optimized for smooth performance:
+The particle system is optimized for performance using:
 
-10,000 particles
+Three.js BufferGeometry
 
 GPU accelerated rendering
 
-BufferGeometry optimization
-
 Efficient animation loops
 
-Runs best on:
+The system handles 10,000+ particles smoothly on most modern devices.
 
-Desktop GPUs
+🔮 Future Improvements
 
-Modern laptops
+Possible upgrades:
 
-High performance mobile devices
+Multi-hand gesture support
 
-📸 Demo Ideas
+Additional particle shapes
 
-You can use this project for:
+Audio-reactive particles
 
-Creative coding portfolios
-
-Interactive installations
-
-WebGL experiments
-
-Gesture-based UI research
-
-Visual art projects
-
-🔮 Possible Future Improvements
-
-Multiple hand support
-
-Gesture recognition for more commands
-
-Custom particle shapes
-
-Audio reactive particles
-
-VR / AR support
-
-Particle trails
+VR / AR interaction
 
 Mobile gesture optimization
 
+Particle trails and physics
+
+Shader-based particle effects
+
 📜 License
 
-MIT License
-
-Feel free to use, modify, and distribute this project.
+This project is licensed under the MIT License.
 
 👨‍💻 Author
 
-Created as a creative coding experiment combining AI vision and WebGL particles.
+Amber
+
+Interactive project exploring creative coding, computer vision, and real-time WebGL particle systems.
